@@ -10,15 +10,24 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <header>
-          <NavLink to="/">Main</NavLink>
-          <NavLink to="/films">Films</NavLink>
-          <NavLink to="/characters">Characters</NavLink>
-          <NavLink to="/books">Books</NavLink>
+          <NavLink className="navlink" to="/">
+            Home
+          </NavLink>
+          <NavLink className="navlink" to="/films">
+            Films
+          </NavLink>
+          <NavLink className="navlink" to="/characters">
+            Characters
+          </NavLink>
+          <NavLink className="navlink" to="/books">
+            Books
+          </NavLink>
         </header>
         <Switch>
           <Route exact path="/">
             <Main />
           </Route>
+
           <Route path="/films">
             <Films films={Films} />
           </Route>
