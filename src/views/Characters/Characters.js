@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchCharacters } from '../../services/characters';
 import CharacterList from '../../components/CharacterList/CharacterList';
+import './Characters.css';
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
@@ -29,35 +30,37 @@ export default function Characters() {
 
   return (
     <>
-      <div>
-        <input
-          type="text"
-          value={query}
-          placeholder="Search"
-          onChange={(e) => {
-            setQuery(e.target.value);
-          }}
-        />
-        <button
-          onClick={() => {
-            setLoading(true);
-          }}
-        >
-          Submit
-        </button>
-      </div>
-      <div>
-        <select value={race} onChange={(e) => setRace(e.target.value)}>
-          <option value="All">All</option>
-          <option value="Dwarf">Dwarf</option>
-          <option value="Elf">Elf</option>
-          <option value="Hobbit">Hobbit</option>
-          <option value="Human">Human</option>
-          <option value="Maiar">Maiar</option>
-          <option value="Orc">Orc</option>
-        </select>
-      </div>
-      <div>
+      <section className="options">
+        <div>
+          <input
+            type="text"
+            value={query}
+            placeholder="Search"
+            onChange={(e) => {
+              setQuery(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              setLoading(true);
+            }}
+          >
+            Submit
+          </button>
+        </div>
+        <div>
+          <select value={race} onChange={(e) => setRace(e.target.value)}>
+            <option value="All">All</option>
+            <option value="Dwarf">Dwarf</option>
+            <option value="Elf">Elf</option>
+            <option value="Hobbit">Hobbit</option>
+            <option value="Human">Human</option>
+            <option value="Maiar">Maiar</option>
+            <option value="Orc">Orc</option>
+          </select>
+        </div>
+      </section>
+      <div className="list">
         {characters.map((c) => {
           return <CharacterList key={c.id} {...c} />;
         })}

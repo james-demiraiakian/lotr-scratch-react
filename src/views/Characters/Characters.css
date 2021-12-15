@@ -1,0 +1,25 @@
+.options {
+  display: flex;
+  flex-direction: row;
+  margin: 10px 0px 10px 0px;
+  justify-content: center;
+}
+
+body {
+  background-color: rgb(221, 99, 0);
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.character-list {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 5px;
+  font-size: 2rem;
+  border-radius: 10px;
+  background-color: rgb(66, 95, 66);
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchBooks } from '../../services/books';
 import BookList from '../../components/BookList/BookList';
+import './Books.css';
 
 export default function Books() {
   const [books, setBooks] = useState([]);
@@ -12,7 +13,7 @@ export default function Books() {
     fetchData();
   }, []);
   return (
-    <div>
+    <div className="books">
       {books.map((b) => {
         return <BookList key={b.id} {...b} />;
       })}
