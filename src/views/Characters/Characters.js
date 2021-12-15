@@ -8,6 +8,7 @@ export default function Characters() {
   const [query, setQuery] = useState('');
 
   useEffect(() => {
+    setQuery('');
     const fetchData = async () => {
       const data = await fetchCharacters(race, query);
       setCharacters(data);
