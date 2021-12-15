@@ -1,0 +1,8 @@
+.book-list {
+  border: 1px solid black;
+  margin: 20px;
+  padding: 5px;
+  font-size: 2rem;
+  border-radius: 15px;
+  background-color: rgb(66, 95, 66);
+}
